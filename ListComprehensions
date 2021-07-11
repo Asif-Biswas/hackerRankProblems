@@ -1,0 +1,38 @@
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    
+holeList = []
+
+x0 = 0
+y0 = 0
+z0 = 0
+
+while x0 <= x:
+    while y0 <= y:
+        while z0 <= z:
+            l = []
+            l.extend([x0,y0,z0])
+            holeList.append(l)
+            z0 += 1
+        
+        y0 += 1
+        z0 = 0
+        
+    x0 += 1
+    y0 = 0
+    z0 = 0
+    
+
+def addListItem(lst):
+    sum = 0
+    for j in lst:
+        sum += j
+
+    return sum
+
+holeList = [i for i in holeList if addListItem(i) != n]
+
+print(holeList)
